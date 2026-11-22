@@ -1184,7 +1184,7 @@ export const MuscleBadgeIcon: React.FC<MuscleBadgeIconProps> = ({
 }) => {
   const boxClass =
     size === 'thumb'
-      ? 'w-14 h-14 rounded-xl'
+      ? 'w-[60px] h-[60px] rounded-xl'
       : size === 'xl' || size === 'lg'
         ? 'w-14 h-14 rounded-2xl'
         : size === 'sm'
@@ -1198,45 +1198,45 @@ export const MuscleBadgeIcon: React.FC<MuscleBadgeIconProps> = ({
         ? 'border-[#FACC15]/38 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),inset_0_-1px_0_rgba(8,10,14,0.9)]'
         : tone === 'muted'
           ? 'border-white/[0.06] shadow-[inset_0_1px_0_rgba(255,255,255,0.05),inset_0_-1px_0_rgba(8,10,14,0.9)]'
-          : 'border-white/[0.08] shadow-[inset_0_1px_0_rgba(255,255,255,0.06),inset_0_-1px_0_rgba(8,10,14,0.92)]';
+          : 'border-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),inset_0_-1px_0_rgba(8,10,14,0.92)]';
 
   const backlightGradient =
     tone === 'volt'
-      ? 'radial-gradient(circle at 50% 44%, rgba(255,69,0,0.2) 0%, rgba(56,189,248,0.06) 58%, rgba(14,17,24,0) 82%)'
+      ? 'radial-gradient(circle at 50% 44%, rgba(255,69,0,0.22) 0%, rgba(56,189,248,0.07) 58%, rgba(14,17,24,0) 82%)'
       : tone === 'amber'
         ? 'radial-gradient(circle at 50% 44%, rgba(250,204,21,0.14) 0%, rgba(255,69,0,0.06) 55%, rgba(14,17,24,0) 82%)'
         : tone === 'muted'
           ? 'radial-gradient(circle at 50% 44%, rgba(148,163,184,0.07) 0%, rgba(14,17,24,0) 74%)'
-          : 'radial-gradient(circle at 50% 44%, rgba(255,69,0,0.13) 0%, rgba(56,189,248,0.06) 58%, rgba(14,17,24,0) 82%)';
+          : 'radial-gradient(circle at 50% 44%, rgba(255,85,0,0.16) 0%, rgba(56,189,248,0.07) 58%, rgba(10,12,16,0) 82%)';
 
   return (
     <div
-      className={`${boxClass} ${borderToneClass} relative border bg-[#0E1118] flex items-center justify-center shrink-0 overflow-hidden`}
+      className={`${boxClass} ${borderToneClass} relative z-0 isolate border bg-gradient-to-br from-[#1C212C] via-[#12151C] to-[#0A0C10] flex items-center justify-center shrink-0 overflow-hidden`}
       title={recommended ? `${muscle} · ท่าแนะนำ` : muscle}
     >
       {/* Subtle Studio Radial Backlight inside Dark Carbon Container */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0"
+        className="pointer-events-none absolute inset-0 z-0"
         style={{ background: backlightGradient }}
       />
       {/* Crisp Top Rim Highlight */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-1.5 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"
+        className="pointer-events-none absolute inset-x-1.5 top-0 z-0 h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent"
       />
       <AnatomicalMuscleIcon
         muscle={muscle}
-        className="w-full h-full relative z-10"
+        className="w-full h-full relative z-0"
         activeGlow={tone !== 'muted'}
         showSecondary
       />
-      {/* Minimal Gold Star Corner Badge for Recommended Exercises */}
+      {/* Minimal Gold Star Corner Badge — Strictly z-10 Inside Isolated Container */}
       {recommended && (
         <span
           aria-label="ท่าแนะนำ"
           title="ท่าแนะนำ (Recommended)"
-          className="absolute top-1 right-1 z-20 w-4 h-4 rounded-full bg-[#090A0D]/90 ring-1 ring-[#FACC15]/55 flex items-center justify-center shadow-[0_2px_6px_rgba(0,0,0,0.65)]"
+          className="absolute top-1 right-1 z-10 w-4 h-4 rounded-full bg-[#090A0D]/90 ring-1 ring-[#FACC15]/60 flex items-center justify-center shadow-[0_2px_6px_rgba(0,0,0,0.75)] pointer-events-none"
         >
           <svg
             viewBox="0 0 16 16"

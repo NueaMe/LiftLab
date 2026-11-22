@@ -20,7 +20,7 @@ import {
 } from '../data/exercises';
 import { formatNumber, getHistoricalBest1RM } from '../utils/analytics';
 import { AthleticWatermark } from './AthleticWatermark';
-import { ExerciseThumbnail } from './ExerciseThumbnail';
+import { MuscleBadgeIcon } from './MuscleBadge';
 
 interface ExercisesTabProps {
   history: CompletedWorkout[];
@@ -435,7 +435,12 @@ export const ExercisesTab: React.FC<ExercisesTabProps> = ({
                     aria-label={`ดูรายละเอียดท่า ${ex.name}`}
                     className="shrink-0 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF4500]/70 active:scale-[0.97] transition-transform"
                   >
-                    <ExerciseThumbnail exercise={ex} />
+                    <MuscleBadgeIcon
+                      muscle={ex.muscle}
+                      size="thumb"
+                      tone="cobalt"
+                      recommended={Boolean(ex.isRecommended)}
+                    />
                   </button>
 
                   <div className="min-w-0 flex-1">
@@ -509,7 +514,12 @@ export const ExercisesTab: React.FC<ExercisesTabProps> = ({
                     aria-label={`ดูรายละเอียดท่า ${ex.name}`}
                     className="shrink-0 rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF4500]/70"
                   >
-                    <ExerciseThumbnail exercise={ex} />
+                    <MuscleBadgeIcon
+                      muscle={ex.muscle}
+                      size="thumb"
+                      tone="cobalt"
+                      recommended={Boolean(ex.isRecommended)}
+                    />
                   </button>
                   <div className="min-w-0 flex-1">
                     <button
