@@ -1,20 +1,18 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# LIFTLAB — Mobile-First Fitness & Progressive Overload Tracker
 
-# Run and deploy your AI Studio app
+เว็บแอปพลิเคชันสำหรับบันทึกตารางการฝึกเวทเทรนนิ่งและติดตามพัฒนาการ (Progressive Overload) ออกแบบส่วนติดต่อผู้ใช้แบบ Mobile-First เพื่อความรวดเร็วและใช้งานมือเดียวได้สะดวกขณะฝึกในยิม
 
-This contains everything you need to run your app locally.
+🔗 **ทดลองใช้งานจริง (Live Demo):** https://nueame.github.io/LiftLab/
 
-View your app in AI Studio: https://ai.studio/apps/27acb3e7-9155-49f6-8f79-81a82efe4c9e
+## ฟีเจอร์หลัก (Key Features)
+- **Analytics & Calculation:** คำนวณค่าประมาณการน้ำหนักสูงสุดที่ยกได้ใน 1 ครั้ง (Est. 1RM) ด้วยสูตร Epley Formula พร้อมสรุปปริมาณการฝึก (Volume) และประเมินความพร้อมของกล้ามเนื้อ (Muscle Readiness)
+- **Smart Workout Flow:** ระบบจับเวลาพักอัตโนมัติ (Auto Rest Timer) ปรับตามโหมดพลังงาน และคลังท่าฝึกกว่า 40 ท่าพร้อมคำอธิบายสำหรับผู้เริ่มต้น
+- **Local-First Architecture:** จัดเก็บและประมวลผลข้อมูลบน LocalStorage ของเบราว์เซอร์โดยตรง ทำงานได้รวดเร็วแม้ในพื้นที่อับสัญญาณอินเทอร์เน็ต พร้อมระบบ Export/Import ไฟล์ JSON
 
-## Run Locally
+## เทคโนโลยีที่ใช้ (Tech Stack)
+- React, TypeScript, Tailwind CSS, Vite
+- LocalStorage & GitHub Pages
 
-**Prerequisites:**  Node.js
-
-
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## วิธีติดตั้งและรันโปรเจกต์บนเครื่อง (Run Locally)
+1. ติดตั้งแพ็กเกจที่จำเป็น: `npm install --legacy-peer-deps`
+2. รันเซิร์ฟเวอร์จำลอง: `npm run dev`
