@@ -1,0 +1,6 @@
+{
+  "name": "LiftLog Analytics",
+  "description": "Mobile-first workout and progressive overload tracker with Epley 1RM analytics, auto rest timer, beginner routines, and Thai exercise form cues.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
